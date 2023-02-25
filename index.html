@@ -1,52 +1,281 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>SemanticKITTI-C</title>
+
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>RobustLiDARSeg</title>
-    <meta content="Benchmarking the Robustness of LiDAR Semantic Segmentation Models" property="og:title">
-    <meta content="http://people.eecs.berkeley.edu/~tancik/nerf/website_renders/images/nerf_graph.jpg" property="twitter:image">
-    <meta property="og:type" content="website">
-    <meta content="summary_large_image" name="twitter:card">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="./css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="./css/ghotish.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
 
-<body class="container-sm">
-    <div>
-        <h2 class="text-center d-block text-dark pt-5">
-            Benchmarking the Robustness of LiDAR Semantic Segmentation Models
-        </h2>
-        <h4 class="text-center d-block" style="color:#ffc107">Under review
-        </h4>
-        <p class="text-center d-block text-dark"><a class="text-secondary" href="https://yanx27.github.io/">Xu Yan, </a>
-            <a class="text-secondary" href="https://github.com/Ghostish/">Chaoda Zheng, </a>
-            <a class="text-secondary" href="https://mypage.cuhk.edu.cn/academics/lizhen/"> Zhen Li,</a>
-            Shuguang Cui,
-            <a class="text-secondary" href="https://vas.mpi-inf.mpg.de/dengxin/"> Dengxin Dai</a>
-        <p class="text-center d-block text-dark">The Chinese University of Hong Kong, Shenzhen </p>
-        <p class="text-center d-block text-dark">MPI for Informatics </p>
+<body>
+    <div class="container" id="main">
+        <div class="row">
 
-        <div>
-            <div class="row gx-5 justify-content-center row-cols-2">
-                <div class="col-1 p-3 text-decoration-none mx-5">
-                    <button type="button" class="btn"><a class="d-block mx-auto" href=""><img src="./figs/paper_icon.png" width="100%"/>
-                    </a>Paper</button>
+            <h2 class="col-md-12 text-center" style="padding-bottom:20px">
 
-                </div>
-                <div class="col-1 p-3 text-decoration-none mx-5">
-                    <button type="button" class="btn"><a class="d-block mx-auto" href="https://pan.baidu.com/s/1wAptR9HjGVevEpghgezu2w"><img src="./figs/code_icon.png" width="100%"/>
-                    </a>Dataset (ys33)</button>
-                </div>
+                <b>Benchmarking the Robustness of LiDAR Semantic Segmentation Models</b>
+<!--                <span style="font-size:18pt"> Under Review </span>-->
+                <br>
+            </h2>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline" style="font-size:18pt">
+                    <li>
+                        <a href="https://yanx27.github.io/">
+                            Xu Yan
+                        </a>
+                        </br>CUHK-SZ
+                    </li>
+                    <li>
+                        <a href="">
+                            Chaoda Zheng
+                        </a>
+                        </br>CUHK-SZ
+                    </li>
+                    <li>
+                        <a href="https://mypage.cuhk.edu.cn/academics/lizhen/">
+                            Zhen Li
+                        </a>
+                        </br>CUHK-SZ
+                    </li>
+
+                    <br>
+
+                    <li>
+                        <a href="">
+                            Shuguang Cui
+                        </a>
+                        </br>CUHK-SZ
+                    </li>
+                    <li>
+                        <a href="https://vas.mpi-inf.mpg.de/dengxin/">
+                            Dengxin Dai
+                        </a>
+                        </br>MPI for Informatics
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
 
 
+        <div class="row" style="padding-top:45px">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://arxiv.org/pdf/2301.00970.pdf">
+                            <h4><strong>[Paper]</strong></h4>
+                        </a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a href="#video">-->
+<!--                            <h4><strong>[Video]</strong></h4>-->
+<!--                        </a>-->
+<!--                    </li>-->
+                    <li>
+                        <a href="">
+                            <h4><strong>[Code]</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://cuhko365-my.sharepoint.com/:f:/g/personal/218012048_link_cuhk_edu_cn/Eijx5paokZZHu9ON-DwA4tQBgWId2Zdkcr1D_Z7moIsh1Q?e=h2QV9Q">
+                            <h4><strong>[Dataset]</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h4><strong>[Benchmarks]</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
+
+        <div class="row" style="padding-bottom:30px">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 style="text-align: center;">
+                    <b>Abstract</b>
+                </h3>
+                <hr>
+                <p class="text-justify">
+                    When using LiDAR semantic segmentation models for safety-critical applications such as autonomous driving,
+                    it is essential to understand and improve their robustness with respect to a large range of LiDAR
+                    corruptions. In this paper, we aim to comprehensively analyze the robustness of LiDAR semantic segmentation models under various corruptions. To rigorously evaluate the robustness and generalizability of
+                    current approaches, we propose a new benchmark called <b>SemanticKITTI-C</b>, which features <b>16</b> out-of-domain
+                    LiDAR corruptions in three groups, namely adverse weather, measurement noise and cross-device discrepancy. Then, we systematically investigate <b>11</b> LiDAR semantic segmentation models, especially spanning
+                    different input representations (e.g., point clouds, voxels, projected images, and etc.), network architectures
+                    and training schemes. Through this study, we obtain two insights: 1) We find out that the input representation plays a crucial role in robustness. Specifically, under specific corruptions, different representations
+                    perform variously. 2) Although state-of-the-art methods on LiDAR semantic segmentation achieve promising results on clean data, they are less robust when dealing with noisy data. Finally, based on the above
+                    observations, we design a robust LiDAR segmentation model (RLSeg) which greatly boosts the robustness
+                    with simple but effective modifications. It is promising that our benchmark, comprehensive analysis, and
+                    observations can boost future research in robust LiDAR semantic segmentation for safety-critical applications.
+                </p>
+            </div>
+        </div>
+
+
+<!--        <div class="row" id="video" style="padding-bottom:30px">-->
+<!--            <div class="col-md-8 col-md-offset-2">-->
+<!--                <h3 style="text-align: center;">-->
+<!--                    <b>Video</b>-->
+<!--                </h3>-->
+<!--                <hr>-->
+<!--                &lt;!&ndash;            <video id="v0" width="100%" loop="" muted="" controls="">&ndash;&gt;-->
+<!--                &lt;!&ndash;                <source src="img/hi_res.mp4" type="video/mp4">&ndash;&gt;-->
+<!--                &lt;!&ndash;            </video>&ndash;&gt;-->
+<!--                <iframe width="100%" height="400" src="https://www.youtube.com/embed/yEdf24hF_sY">-->
+<!--                </iframe>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
+
+        <div class="row" id="intuitions" style="padding-bottom:30px">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 style="text-align: center;">
+                    <b>Overview</b>
+                </h3>
+                <hr>
+            </div>
+
+            <!-- Question 1-->
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h4 class="">
+                        <b>Examples of our proposed SemanticKITTI-C.</b>  We corrupt the clean validation set of SemanticKITTI using six types of corruptions
+                            with 16 levels of intensity to build upon a comprehensive robustness benchmark for LiDAR semantic segmentation. Listed examples are point
+                            clouds on 16-beam LiDAR sensors, with global and local distortion, in snowfall and fog simulations.
+                    </h4>
+
+                    <div class="col-md-12">
+                        <figure></figure>
+                        <img src="figs/overview.png" style="padding-bottom:10px; align-content: center"
+                            class="img-responsive" alt="overview">
+
+                        <br>
+                        </figure>
+                    </div>
+                <h4 class="">
+                        We categorize common LiDAR corruptions into three domains: (1) adverse weather conditions, (2) measurement noise and (3) cross-device discrepancy.
+                    </h4>
+                    <div class="col-md-12">
+                        <figure></figure>
+                        <img src="figs/cat.png" style="padding-bottom:10px; align-content: center"
+                            class="img-responsive" alt="overview">
+
+                        <br>
+                        </figure>
+                    </div>
+
+                    <h4 class="">
+                        We benchmark 11 existing methods for LiDAR semantic segmentation.
+                    </h4>
+                    <div class="col-md-12">
+                        <figure></figure>
+                        <img src="figs/method.png" style="padding-bottom:10px; align-content: center"
+                            class="img-responsive" alt="overview">
+
+                        <br>
+                        </figure>
+                    </div>
+
+
+        <div class="row" style="padding-bottom:30px">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 style="text-align: center;">
+                    <b>Benchmarking Results</b>
+                </h3>
+                <hr>
+            </div>
+              <h4 class="">
+Benchmarking the robustness of state-of-the-art methods in all 16 scenarios (6 classes) on SemanticKITTI-C. R denotes the relative mean robustness performance of the model. The
+higher R means the model is more robust to inferior LiDAR conditions.                    </h4>
+            <div class="col-md-12">
+                        <figure></figure>
+                        <img src="figs/result.png" style="padding-bottom:10px; align-content: center"
+                            class="img-responsive" alt="overview">
+
+                        <br>
+                        </figure>
+                    </div>
+
+        </div>
+
+        <div class="row" id="citation" style="padding-bottom:30px">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 style="text-align: center;">
+                    <b>Citation</b>
+                </h3>
+                              <h4 class="">
+If you find our work useful in your research, please consider citing:                   </h4>
+                <hr>
+                <pre class="w4-panel w4-centerbar w4-light-grey" style="font-size: 11px">
+@article{yan2023benchmarking,
+  title={Benchmarking the Robustness of LiDAR Semantic Segmentation Models},
+  author={Yan, Xu and Zheng, Chaoda and Li, Zhen and Cui, Shuguang and Dai, Dengxin},
+  journal={arXiv preprint arXiv:2301.00970},
+  year={2023}
+}
+            </pre>
+            </div>
+        </div>
+
+<!--        <div class="row" id="benchmarks" style="padding-bottom:30px">-->
+<!--            <div class="col-md-8 col-md-offset-2">-->
+<!--                <h3 style="text-align: center;">-->
+<!--                    <b>SemanticKITTI-C Benchmark Challenges</b>-->
+<!--                </h3>-->
+<!--                <hr>-->
+<!--                We wish to <i>aggregate and highlight</i> results from different approaches tackling the problem of-->
+<!--                fine-grained 3D object identification via language. If you use either of our datasets with a new method,-->
+<!--                please let us know! so we can <u>add your method</u> and attained results in our <a-->
+<!--                    href="./benchmarks.html"> benchmark-aggregating page</a>.-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+
+<!--        <div class="row" style="padding-bottom:30px">-->
+<!--            <div class="col-md-8 col-md-offset-2">-->
+<!--                <h3 style="text-align: center;">-->
+<!--                    <b>Acknowledgements</b>-->
+<!--                </h3>-->
+<!--                <hr>-->
+<!--                <p class="text-justify">-->
+<!--                    The authors wish to acknowledge the support of a Vannevar Bush Faculty Fellowship, a grant from the-->
+<!--                    Samsung GRO program, and the Stanford SAIL Toyota Research Center, NSF grant IIS-1763268, KAUST-->
+<!--                    grant BAS/1/1685-01-01, and a research gift from Amazon Web Services. They also want to thank Iro-->
+<!--                    Armeni, Angel X. Chang, and Jiayun Wang for inspiring discussions and their help in bringing this-->
+<!--                    project to fruition. Last but not least, they want to express their gratitude to the wonderful-->
+<!--                    Turkers of Amazon Mechanical Turk, whose help in curating the introduced datasets was paramount.-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--    </div>-->
+<!--    <script type='text/javascript' id='clustrmaps'-->
+<!--        src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=110&t=tt&d=_kJ7hJdlh3UTdIJueDububmhQbOOTRZpo-A1RUHuEqU&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>-->
 </body>
 
 </html>
